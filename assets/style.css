@@ -1,0 +1,57 @@
+html {
+    --header: #0d6efd;
+    --back-color: #000;
+    --color-text: #fff;
+}
+
+nav {
+    background-color: var(--header);
+}
+
+input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: #FFF;
+    border-radius: 100px;
+    float: right;
+    position: relative;
+}
+
+label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--header);
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: var(--back-color);
+}
+
+input[type="checkbox"]:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+@media screen and (max-width: 768px) {
+    #ano, #mes, #dia, #tipo, #descricao, #valor {
+        margin-bottom: 20px;
+    }
+
+    #btnCadastrar, #pesquisarDespesa {
+        width: 100%;  
+      }
+}
