@@ -63,6 +63,6 @@ input[type="checkbox"]:checked + label:after {
 
     #btnCadastrar, #pesquisarDespesa {
         width: 100%;
-        margin-top: 20px;  
+        margin-bottom: 20px;  
       }
 }
