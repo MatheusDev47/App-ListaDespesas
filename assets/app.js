@@ -1,6 +1,3 @@
-//Carrega o conteúdo da página consulta sem precisar de reload
-// $('#consulta').on('click', () => { $('#pagina').load('consulta.html') })
-
 //Criação da classe despesa associando os parâmetros do método constructor aos valores dos campos da função cadastrarDespesa
 class Despesa {
     constructor(ano, mes, dia, tipo, descricao, valor) {
@@ -208,7 +205,6 @@ function adicionaDespesaLista(despesa) {
             window.location.reload()
         }
         linha.insertCell(4).append(btnDelete)
-
     })
 }
 
@@ -216,10 +212,6 @@ function adicionaDespesaLista(despesa) {
 function carregaListaDespesas() {
     const despesas = bd.recuperarTodosRegistros()
     adicionaDespesaLista(despesas)
-
-    // if (despesa.length === 0 && filtro === false) {
-    //     despesa = bd.recuperarTodosRegistros()
-    // }
 }
 
 function filtrarDespesa() {
@@ -233,7 +225,6 @@ function filtrarDespesa() {
     const despesas = new Despesa(ano, mes, dia, tipo, descricao, valor)
     const despesaFiltrada = bd.pesquisar(despesas)
     adicionaDespesaLista(despesaFiltrada)
-    //carregaListaDespesas(despesaFiltrada, true)
 }
 
 $('#btnCadastrar').click(() => { cadastraDespesa() })
@@ -249,6 +240,7 @@ $('body').keyup(e => {
     }
 })
 
+//Função responsável pela alternância de temas da página
 const darkMode = localStorage.getItem('darkMode')
 const body = document.querySelector("body")
 const text = document.querySelector("h1")

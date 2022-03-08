@@ -8,6 +8,7 @@ nav {
     background-color: var(--header);
 }
 
+/* INICIO = Estilização botão de tema */
 input[type="checkbox"] {
     width: 0;
     height: 0;
@@ -45,6 +46,15 @@ input[type="checkbox"]:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
 }
+/* FIM = Estilização botão de tema */
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .toggle {
+        display: flex;
+        margin-top: 10px;
+    }
+}
 
 @media screen and (max-width: 768px) {
     #ano, #mes, #dia, #tipo, #descricao, #valor {
@@ -52,6 +62,7 @@ input[type="checkbox"]:checked + label:after {
     }
 
     #btnCadastrar, #pesquisarDespesa {
-        width: 100%;  
+        width: 100%;
+        margin-top: 20px;  
       }
 }
